@@ -426,6 +426,7 @@ const Main = () => {
           <div>
             <img
               src="/IMG_5812.JPG"
+              // src="/gelaxy.png"
               alt="Surya Singh"
               className="w-28 h-28 max-sm:w-20 max-sm:h-20 rounded-full object-cover border border-white/10"
             />
@@ -644,84 +645,83 @@ const Main = () => {
             </div>
           </div>
           {/* this is for contact me*/}
-            {/* ================= CONTACT SECTION ================= */}
-            <section
-              id="contact"
-              className="relative w-full max-w-5xl mx-auto px-6 mb-15 text-center"
+          {/* ================= CONTACT SECTION ================= */}
+          <section
+            id="contact"
+            className="relative w-full max-w-5xl mx-auto px-6 mb-15 text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+              Get In Touch
+            </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-xl mx-auto text-sm">
+              Want to collaborate or discuss an idea? Reach out — I&apos;m
+              always open to exciting work.
+            </p>
+
+            {/* Contact Card */}
+            <div
+              className="p-8 mt-5 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 
+                backdrop-blur-lg shadow-lg max-w-lg mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                Get In Touch
-              </h2>
-              <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-xl mx-auto text-sm">
-                Want to collaborate or discuss an idea? Reach out — I&apos;m always
-                open to exciting work.
+              {/* Email */}
+              <p className="text-lg font-medium text-gray-900 dark:text-white mb-3">
+                📩 Email
+              </p>
+              <a
+                href="mailto:suryasingh3209@gmail.com"
+                className="text-blue-400 hover:text-blue-300 underline break-all"
+              >
+                suryaprakash3209@gmail.com
+              </a>
+
+              {/* Social Icons */}
+              <p className="text-lg font-medium text-gray-900 dark:text-white mt-8 mb-4">
+                🌍 Socials
               </p>
 
-              {/* Contact Card */}
-              <div
-                className="p-8 mt-5 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 
-                backdrop-blur-lg shadow-lg max-w-lg mx-auto"
-              >
-                {/* Email */}
-                <p className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-                  📩 Email
-                </p>
+              <div className="flex items-center justify-center gap-6 text-2xl opacity-90">
                 <a
-                  href="mailto:suryasingh3209@gmail.com"
-                  className="text-blue-400 hover:text-blue-300 underline break-all"
+                  href="https://github.com/suru3209"
+                  target="_blank"
+                  className="hover:text-purple-400 transition text-gray-800"
                 >
-                  suryaprakash3209@gmail.com
+                  <GitHubLogoIcon className="w-6 h-6" />
                 </a>
 
-                {/* Social Icons */}
-                <p className="text-lg font-medium text-gray-900 dark:text-white mt-8 mb-4">
-                  🌍 Socials
-                </p>
+                <a
+                  href="https://linkedin.com/in/surya3209"
+                  target="_blank"
+                  className="hover:text-blue-400 transition text-gray-800"
+                >
+                  <LinkedInLogoIcon className="w-6 h-6 " />
+                </a>
 
-                <div className="flex items-center justify-center gap-6 text-2xl opacity-90">
-                  <a
-                    href="https://github.com/suru3209"
-                    target="_blank"
-                    className="hover:text-purple-400 transition text-gray-800"
-                  >
-                    <GitHubLogoIcon className="w-6 h-6" />
-                  </a>
+                <a
+                  href="https://x.com/Surya_singh3209"
+                  target="_blank"
+                  className="hover:text-gray-200 transition text-gray-800"
+                >
+                  <FaXTwitter className="w-6 h-6 " />
+                </a>
 
-                  <a
-                    href="https://linkedin.com/in/surya3209"
-                    target="_blank"
-                    className="hover:text-blue-400 transition text-gray-800"
-                  >
-                    <LinkedInLogoIcon className="w-6 h-6 " />
-                  </a>
+                <a
+                  href="https://yourwebsite.com"
+                  target="_blank"
+                  className="hover:text-green-400 transition text-gray-800"
+                >
+                  <Globe className="w-6 h-6 " />
+                </a>
 
-                  <a
-                    href="https://x.com/Surya_singh3209"
-                    target="_blank"
-                    className="hover:text-gray-200 transition text-gray-800"
-                  >
-                    <FaXTwitter className="w-6 h-6 " />
-                  </a>
-
-                  <a
-                    href="https://yourwebsite.com"
-                    target="_blank"
-                    className="hover:text-green-400 transition text-gray-800"
-                  >
-                    <Globe className="w-6 h-6 " />
-                  </a>
-
-                  <a
-                    href="/resume.pdf"
-                    download
-                    className="hover:text-yellow-400 transition text-gray-800"
-                  >
-                    <FileIcon className="w-6 h-6 " />
-                  </a>
-                </div>
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="hover:text-yellow-400 transition text-gray-800"
+                >
+                  <FileIcon className="w-6 h-6 " />
+                </a>
               </div>
-            </section>
-          
+            </div>
+          </section>
         </div>
       </div>
     </div>
