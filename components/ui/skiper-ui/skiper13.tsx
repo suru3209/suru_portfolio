@@ -17,6 +17,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import GithubStats from "../../GithubStats";
+import { Skiper90 } from "./skiper90";
 
 const Skiper13 = () => {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -420,7 +421,7 @@ const Main = () => {
       : filteredProjects;
 
   return (
-    <div className="flex h-full flex-col items-center justify-center bg-black pt-15 font-sans text-white">
+    <div className="flex h-full flex-col lg:w-full items-center justify-center bg-black pt-15 font-sans text-white">
       <div className="w-full flex justify-center py-5 pt-24 dark:bg-black">
         <div className="w-2/3 max-sm:w-full flex flex-col items-center">
           <div>
@@ -431,7 +432,7 @@ const Main = () => {
               className="w-28 h-28 max-sm:w-20 max-sm:h-20 rounded-full object-cover border border-white/10"
             />
           </div>
-          <div className="mt-4 px-32 max-sm:px-4">
+          <div className="mt-4 px max-sm:px-4">
             <h1
               className={`text-[3rem] mt-2 max-sm:text-[1.6rem] whitespace-nowrap font-bold tracking-tight text-center`}
             >
@@ -514,86 +515,9 @@ const Main = () => {
               </div>
             ) : (
               <>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                  {displayedProjects.map((project) => (
-                    <div
-                      key={project.id}
-                      className="group relative rounded-xl border border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-6 shadow-sm hover:shadow-md transition-all duration-300"
-                    >
-                      {/* Icon/Logo Placeholder */}
-                      <div className="w-12 h-12 rounded-full bg-linear-to-br from-orange-400 via-green-400 to-blue-500 mb-4 flex items-center justify-center overflow-hidden">
-                        {project.img ? (
-                          <img
-                            src={project.img}
-                            alt={project.title}
-                            className="w-full h-full object-cover rounded-full"
-                          />
-                        ) : (
-                          <span className="text-white font-bold text-lg">
-                            {project.title.charAt(0)}
-                          </span>
-                        )}
-                      </div>
+                <Skiper90/>
 
-                      {/* Title */}
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-                        {project.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                        {project.description}
-                      </p>
-
-                      {/* Technology Tags */}
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {project.tags.map((tag, index) => (
-                          <span
-                            key={index}
-                            className="px-2.5 py-1 text-xs font-medium rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 hover:bg-gray-900 hover:text-gray-50  dark:bg-gray-800  text-gray-700 dark:text-gray-300"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* Action Buttons */}
-                      <div className="flex gap-3">
-                        <a
-                          href={project.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
-                        >
-                          <Globe className="w-4 h-4" />
-                          Website
-                        </a>
-                        <a
-                          href={project.source}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
-                        >
-                          <Github className="w-4 h-4" />
-                          Source
-                        </a>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {selectedCategory === "Full Stack" &&
-                  filteredProjects.length > 2 &&
-                  !showAll && (
-                    <div className="flex justify-center mt-6">
-                      <button
-                        onClick={() => setShowAll(true)}
-                        className="px-6 rounded-sm text-sm font-medium bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900  dark:hover:bg-gray-200 transition-colors"
-                      >
-                        View More
-                      </button>
-                    </div>
-                  )}
+                
               </>
             )}
           </div>

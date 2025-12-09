@@ -23,7 +23,7 @@ export default function GithubContribution() {
 
       {/* Calendar Block */}
       <TooltipProvider>
-        <div className="p-6 rounded-xl bg-white dark:bg-[#0d1117]">
+        <div className="p-2 rounded-xl bg-white dark:bg-[#0d1117]">
           <GitHubCalendar
             username={username}
             blockSize={12}
