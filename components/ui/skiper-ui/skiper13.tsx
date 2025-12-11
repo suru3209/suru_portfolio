@@ -110,7 +110,7 @@ export { Navbar_001, Skiper13, GlobalNavbar };
 const list = [
   { name: "Home", href: "/" },
   { name: "Blogs", href: "/blogs" },
-  { name: "Projects", href: "#projects" },
+  { name: "Projects", href: "/project" },
   { name: "Skills", href: "#skills" },
   { name: "About", href: "/about" },
 ];
@@ -291,134 +291,14 @@ const skills = [
   "MySQL",
 ];
 
-const projects = [
-  {
-    id: 1,
-    title: "Manualfits",
-    img: "/logofinal.png",
-    description:
-      "Manualfits is a modern e-commerce platform designed for seamless fashion shopping with secure payments, smart product recommendations, and a powerful admin dashboard for managing orders, inventory, and customers.",
-    tags: [
-      "React",
-      "Tailwind CSS",
-      "Razorpay",
-      "Nodemailer",
-      "React Charts",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-    ],
-    website: "https://www.manualfits.com",
-    source: "https://github.com/suru3209/ManualFits_Frontend.git",
-    category: "Full Stack",
-  },
-  {
-    id: 2,
-    title: "Too.V",
-    description:
-      "An AI-Powered tool with 200+ users designed to refine your tweets with full customizations and make them stand out—because GPT just doesn&apos;t get it.",
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "Google Gemini",
-      "Prisma",
-      "PostgreSQL",
-      "NextAuth",
-      "Tailwind CSS",
-    ],
-    website: "https://example.com",
-    source: "https://github.com",
-    category: "Full Stack",
-  },
-  {
-    id: 3,
-    title: "Version-Control",
-    description:
-      "An decentralized platform enables users launch their custom tokens, transfer tokens, view token balances, transfer SOL, and check account balances.",
-    tags: [
-      "React",
-      "Web3.js",
-      "TypeScript",
-      "Recoil",
-      "spl-token",
-      "Tailwind CSS",
-    ],
-    website: "https://example.com",
-    source: "https://github.com",
-    category: "Full Stack",
-  },
-  {
-    id: 4,
-    title: "Stock-trading",
-    description:
-      "GhostGram is an anonymous messaging platform that lets users securely send and receive messages through unique, authenticated links.",
-    tags: [
-      "Next.js",
-      "Typescript",
-      "Gemini",
-      "MongoDB",
-      "NextAuth",
-      "Nodemailer",
-      "Tailwind CSS",
-      "Shadcn",
-    ],
-    website: "https://example.com",
-    source: "https://github.com",
-    category: "Full Stack",
-  },
-  {
-    id: 5,
-    title: "Social-media",
-    description:
-      "GhostGram is an anonymous messaging platform that lets users securely send and receive messages through unique, authenticated links.",
-    tags: [
-      "Next.js",
-      "Typescript",
-      "Gemini",
-      "MongoDB",
-      "NextAuth",
-      "Nodemailer",
-      "Tailwind CSS",
-      "Shadcn",
-    ],
-    website: "https://example.com",
-    source: "https://github.com",
-    category: "Full Stack",
-  },
-  {
-    id: 6,
-    title: "Gpt",
-    description:
-      "GhostGram is an anonymous messaging platform that lets users securely send and receive messages through unique, authenticated links.",
-    tags: [
-      "Next.js",
-      "Typescript",
-      "Gemini",
-      "MongoDB",
-      "NextAuth",
-      "Nodemailer",
-      "Tailwind CSS",
-      "Shadcn",
-    ],
-    website: "https://example.com",
-    source: "https://github.com",
-    category: "Full Stack",
-  },
-];
+
 
 const Main = () => {
   const [selectedCategory, setSelectedCategory] =
     useState<string>("Full Stack");
   const [showAll, setShowAll] = useState<boolean>(false);
 
-  const filteredProjects = projects.filter(
-    (project) => project.category === selectedCategory
-  );
-
-  const displayedProjects =
-    selectedCategory === "Full Stack" && !showAll
-      ? filteredProjects.slice(0, 2)
-      : filteredProjects;
+  
 
   return (
     <div className="flex h-full flex-col lg:w-full items-center justify-center bg-black pt-15 font-sans text-white">
@@ -441,7 +321,7 @@ const Main = () => {
             <h1
               className={`mt-2 max-sm:mt-5 max-sm:px-3 text-base max-sm:text-sm text-center font-normal tracking-normal inter leading-6 `}
             >
-              22. I move fast, break limits, and build things that matter. Deep
+              23. I move fast, break limits, and build things that matter. Deep
               into coding, systems, and anything that challenges the brain.
               Tech, creativity, and discipline drive me — from code to cricket
               to great books. Still chasing mastery, one line of code at a time.
@@ -515,9 +395,7 @@ const Main = () => {
               </div>
             ) : (
               <>
-                <Skiper90/>
-
-                
+                <Skiper90 />
               </>
             )}
           </div>

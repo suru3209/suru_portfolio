@@ -1,3 +1,5 @@
+"use client";
+
 import { GitHubCalendar } from "react-github-calendar";
 import {
   Tooltip,
@@ -7,52 +9,65 @@ import {
 } from "@/components/ui/tooltip";
 
 export default function GithubContribution() {
-  const username = "suru3209"; // ← Change your GitHub Username
+  const username = "suru3209";
 
   const colorTheme = {
-    light: ["#E4D9FF", "#C9B6FF", "#A888FF", "#825BFF", "#4F21FF"],
-    dark: ["#1B132B", "#30204C", "#50327A", "#7A5CE6", "#B9A6FF"],
+    light: ["#E9E9E9", "#C6E48B", "#7BC96F", "#239A3B", "#196127"],
+    dark: ["#161B22", "#0E4429", "#006D32", "#26A641", "#39D353"],
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 text-gray-900 dark:text-gray-100">
+    // 👇 This hides the entire section on mobile + tablet
+    <div className="hidden lg:flex w-full flex-col items-center justify-center px-4 transition-colors">
+
       {/* Title */}
-      <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+      <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100 text-center">
         GitHub Contributions
       </h2>
 
-      {/* Calendar Block */}
       <TooltipProvider>
-        <div className="p-2 rounded-xl bg-white dark:bg-[#0d1117]">
-          <GitHubCalendar
-            username={username}
-            blockSize={12}
-            blockMargin={3}
-            blockRadius={3}
-            showWeekdayLabels
-            colorScheme="dark"
-            fontSize={14}
-            theme={{
-              light: colorTheme.light,
-              dark: colorTheme.dark,
-            }}
-            renderBlock={(block, activity) => (
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <rect {...block.props} />
-                </TooltipTrigger>
-                <TooltipContent className="text-xs bg-black text-white px-2 py-1 rounded">
-                  {activity.count} contributions <br />
-                  {activity.date}
-                </TooltipContent>
-              </Tooltip>
-            )}
-          />
+        {/* Desktop Full View Only */}
+        <div
+          className="
+            p-6
+             dark:bg-[#0d1117]
+             dark:border-gray-700
+            
+          "
+        >
+          <div className="text-black dark:text-white">
+            <GitHubCalendar
+              username={username}
+              blockSize={11}
+              blockMargin={4}
+              blockRadius={3}
+              fontSize={16}
+              showWeekdayLabels
+              theme={{ light: colorTheme.light, dark: colorTheme.dark }}
+              renderBlock={(block, activity) => (
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <rect {...block.props} />
+                  </TooltipTrigger>
+
+                  <TooltipContent
+                    className="
+                      text-xs px-2 py-1 rounded 
+                      bg-gray-900 text-white 
+                      dark:bg-white dark:text-black
+                    "
+                  >
+                    {activity.count} contributions <br />
+                    {activity.date}
+                  </TooltipContent>
+                </Tooltip>
+              )}
+            />
+          </div>
         </div>
       </TooltipProvider>
 
-      {/* ---- bottom row ---- */}
-      <div className="w-full flex justify-between max-w-4xl px-4 mt-1 text-sm opacity-80"></div>
+      <div className="h-6"></div>
     </div>
   );
 }
