@@ -2,7 +2,7 @@
 
 import type { MotionValue } from "motion";
 import { motion, useMotionValue, useTransform } from "motion/react";
-import { Globe, Github, } from "lucide-react";
+import { Globe, Github } from "lucide-react";
 import {
   type ReactNode,
   type RefObject,
@@ -13,6 +13,7 @@ import {
 } from "react";
 
 import { cn } from "@/lib/utils";
+import { myFont5 } from "@/app/fonts";
 
 const Skiper90 = () => {
   const projects = [
@@ -27,10 +28,14 @@ const Skiper90 = () => {
         "Tailwind CSS",
         "Razorpay",
         "Nodemailer",
-        "React Charts",
+        "Next.js",
         "Node.js",
         "Express.js",
         "MongoDB",
+        "JWT",
+        "Framer Motion",
+        "Shadcn UI",
+        "Cloudinary",
       ],
       website: "https://www.manualfits.com",
       source: "https://github.com/suru3209/ManualFits_Frontend.git",
@@ -38,17 +43,22 @@ const Skiper90 = () => {
     },
     {
       id: 2,
-      title: "Too.V",
+      title: "VideoCh.com",
+      img: "#",
       description:
-        "An AI-Powered tool with 200+ users designed to refine your tweets with full customizations and make them stand out—because GPT just doesn&apos;t get it.",
+        "Real-time video calling platform with peer-to-peer connection and meeting summary. Implemented authentication using JWT. Developed video call UI and real-time communication features.Backend APIs using Node.js & Express with MongoDB.",
       tags: [
         "Next.js",
         "TypeScript",
-        "Google Gemini",
-        "Prisma",
-        "PostgreSQL",
-        "NextAuth",
+        "Socket.io",
+        "Node.js",
+        "MongoDB",
+        "Jwt",
         "Tailwind CSS",
+        "Shadcn",
+        "WebRTC",
+        "Skiper UI",
+        "axios",
       ],
       website: "https://example.com",
       source: "https://github.com",
@@ -150,19 +160,23 @@ const Skiper90 = () => {
                       className="w-full h-full object-cover rounded-full"
                     />
                   ) : (
-                    <span className="text-white font-bold text-lg">
+                    <span className="text-white font-bold text-lg ">
                       {project.title.charAt(0)}
                     </span>
                   )}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100 mb-2">
+                <h3
+                  className={`text-lg font-bold text-gray-800 dark:text-gray-100 mb-2 ${myFont5.className}`}
+                >
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-xs text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                <p
+                  className={`text-xs text-gray-600 dark:text-gray-300 mb-4 leading-relaxed`}
+                >
                   {project.description.length > 120
                     ? project.description.slice(0, 120) + "..."
                     : project.description}
@@ -170,7 +184,7 @@ const Skiper90 = () => {
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.tags.slice(0, 7).map((tag, i) => (
+                  {project.tags.map((tag, i) => (
                     <span
                       key={i}
                       className="px-2 py-1 text-[10px] border rounded bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-800 hover:text-white transition"

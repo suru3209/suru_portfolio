@@ -7,6 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {  myFont5, myFont7 } from "@/app/fonts";
 
 export default function GithubContribution() {
   const username = "suru3209";
@@ -19,55 +20,59 @@ export default function GithubContribution() {
   return (
     // 👇 This hides the entire section on mobile + tablet
     <div className="hidden lg:flex w-full flex-col items-center justify-center px-4 transition-colors">
-
       {/* Title */}
-      <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100 text-center">
+      <h2 className={`text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100 text-center ${myFont5.className}`}>
         GitHub Contributions
       </h2>
 
       <TooltipProvider>
         {/* Desktop Full View Only */}
-        <div
-          className="
+        <a
+          href="https://github.com/suru3209"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-pointer"
+        >
+          <div
+            className="
             p-6
              dark:bg-[#0d1117]
              dark:border-gray-700
             
           "
-        >
-          <div className="text-black dark:text-white">
-            <GitHubCalendar
-              username={username}
-              blockSize={11}
-              blockMargin={4}
-              blockRadius={3}
-              fontSize={16}
-              showWeekdayLabels
-              theme={{ light: colorTheme.light, dark: colorTheme.dark }}
-              renderBlock={(block, activity) => (
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <rect {...block.props} />
-                  </TooltipTrigger>
+          >
+            <div className="text-black dark:text-white">
+              <GitHubCalendar
+                username={username}
+                blockSize={11}
+                blockMargin={4}
+                blockRadius={3}
+                fontSize={16}
+                showWeekdayLabels
+                theme={{ light: colorTheme.light, dark: colorTheme.dark }}
+                renderBlock={(block, activity) => (
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <rect {...block.props} />
+                    </TooltipTrigger>
 
-                  <TooltipContent
-                    className="
+                    <TooltipContent
+                      className={`${myFont7.className}
                       text-xs px-2 py-1 rounded 
                       bg-gray-900 text-white 
                       dark:bg-white dark:text-black
-                    "
-                  >
-                    {activity.count} contributions <br />
-                    {activity.date}
-                  </TooltipContent>
-                </Tooltip>
-              )}
-            />
+                    `}
+                    >
+                      {activity.count} contributions <br />
+                      {activity.date}
+                    </TooltipContent>
+                  </Tooltip>
+                )}
+              />
+            </div>
           </div>
-        </div>
+        </a>
       </TooltipProvider>
-
-      <div className="h-6"></div>
     </div>
   );
 }

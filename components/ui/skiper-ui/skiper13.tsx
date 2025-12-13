@@ -4,6 +4,14 @@ import { motion } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
 import { useOnClickOutside } from "usehooks-ts";
 import {
+  myFont,
+  myFont1,
+  myFont2,
+  myFont4,
+  myFont5,
+  myFont6,
+} from "@/app/fonts";
+import {
   GitHubLogoIcon,
   LinkedInLogoIcon,
   FileIcon,
@@ -167,7 +175,7 @@ const Navbar_001 = ({
                 e.stopPropagation();
                 setIsOpen(!isOpen);
               }}
-              className="text-sm font-bold uppercase text-white cursor-pointer"
+              className={`text-sm font-bold uppercase text-white cursor-pointer ${myFont4.className}`}
             >
               {isOpen ? "Close" : "Menu"}
             </button>
@@ -187,7 +195,7 @@ const Navbar_001 = ({
                     <Link
                       key={index}
                       href={item.href}
-                      className="mr-4"
+                      className={`mr-4 ${myFont2.className}`}
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
@@ -260,7 +268,12 @@ const Navbar_001 = ({
             </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
-                <a href="" className="cursor-pointer">
+                <a
+                  href="https://drive.google.com/file/d/1Nf7YYvLb4ClBYpmc5YgkGjkTiuUKqSAQ/view?usp=sharing"
+                  className="cursor-pointer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div className="hover:px-3 max-sm:hover:px-2 py-2.5 dark:hover:bg-[#262626] hover:bg-[#F4F4F5] rounded-full transition-all duration-300">
                     <FileIcon className="w-[19px] h-[19px] max-sm:w-[15px] max-sm:h-[15px] text-black" />
                   </div>
@@ -291,14 +304,10 @@ const skills = [
   "MySQL",
 ];
 
-
-
 const Main = () => {
   const [selectedCategory, setSelectedCategory] =
     useState<string>("Full Stack");
   const [showAll, setShowAll] = useState<boolean>(false);
-
-  
 
   return (
     <div className="flex h-full flex-col lg:w-full items-center justify-center bg-black pt-15 font-sans text-white">
@@ -314,12 +323,12 @@ const Main = () => {
           </div>
           <div className="mt-4 px max-sm:px-4">
             <h1
-              className={`text-[3rem] mt-2 max-sm:text-[1.6rem] whitespace-nowrap font-bold tracking-tight text-center`}
+              className={`text-[3rem] mt-2 max-sm:text-[1.6rem] whitespace-nowrap font-bold tracking-tight text-center ${myFont5.className} `}
             >
               Hi, I&apos;m Surya Singh
             </h1>
             <h1
-              className={`mt-2 max-sm:mt-5 max-sm:px-3 text-base max-sm:text-sm text-center font-normal tracking-normal inter leading-6 `}
+              className={`mt-2 max-sm:mt-5 max-sm:px-3 text-base max-sm:text-sm text-center font-normal tracking-normal inter leading-6 ${myFont1.className} `}
             >
               23. I move fast, break limits, and build things that matter. Deep
               into coding, systems, and anything that challenges the brain.
@@ -346,7 +355,9 @@ const Main = () => {
       <div className="relative mt-10 flex h-full flex-col items-center justify-center w-full bg-white dark:bg-black">
         <div id="projects">
           <div className="w-full max-w-4xl px-4 py-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 text-center">
+            <h2
+              className={`text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 text-center ${myFont.className}`}
+            >
               Proof of Work
             </h2>
             <div className="flex justify-center gap-4 border-b border-gray-200 dark:border-gray-800 pb-4">
@@ -356,6 +367,8 @@ const Main = () => {
                   setShowAll(false);
                 }}
                 className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                  myFont4.className
+                } ${
                   selectedCategory === "Full Stack"
                     ? "bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-2 border-gray-900 dark:border-gray-100 hover:bg-gray-900 hover:text-gray-50"
                     : "bg-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
@@ -369,6 +382,8 @@ const Main = () => {
                   setShowAll(false);
                 }}
                 className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                  myFont4.className
+                } ${
                   selectedCategory === "Mobile Apps"
                     ? "bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-2 border-gray-900 dark:border-gray-100 hover:bg-gray-900 hover:text-gray-50"
                     : "bg-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
@@ -403,18 +418,13 @@ const Main = () => {
 
           {/* this is for github contributions */}
           <div className="mx-auto max-w-lg space-y-5 my-10">
-            <a
-              href="https://github.com/suru3209"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cursor-pointer"
-            >
-              <GithubStats />
-            </a>
+            <GithubStats />
           </div>
           {/* this is for experince*/}
           <div className="mx-auto max-w-lg space-y-5 mb-50 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100 ">
+            <h2
+              className={`text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100 ${myFont5.className}`}
+            >
               Experince
             </h2>
             <p className="text-xl md:text-2xl font-bold mb-6 text-gray-400 dark:text-gray-100">
@@ -427,7 +437,9 @@ const Main = () => {
             className="w-full max-w-4xl mx-auto my-16 px-4 text-center"
             id="skills"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+            <h2
+              className={`text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100 ${myFont5.className}`}
+            >
               Skills
             </h2>
 
@@ -452,10 +464,14 @@ const Main = () => {
             id="contact"
             className="relative w-full max-w-5xl mx-auto px-6 mb-15 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+            <h2
+              className={`text-3xl md:text-4xl font-bold text-gray-900 dark:text-white ${myFont5.className}`}
+            >
               Get In Touch
             </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-xl mx-auto text-sm">
+            <p
+              className={`mt-2 text-gray-600 dark:text-gray-300 max-w-xl mx-auto text-sm ${myFont6.className}`}
+            >
               Want to collaborate or discuss an idea? Reach out — I&apos;m
               always open to exciting work.
             </p>
@@ -515,9 +531,10 @@ const Main = () => {
                 </a>
 
                 <a
-                  href="/resume.pdf"
-                  download
-                  className="hover:text-yellow-400 transition text-gray-800"
+                  href="https://drive.google.com/file/d/1Nf7YYvLb4ClBYpmc5YgkGjkTiuUKqSAQ/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-400 transition text-gray-800 cursor-pointer"
                 >
                   <FileIcon className="w-6 h-6 " />
                 </a>
