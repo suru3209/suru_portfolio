@@ -27,7 +27,7 @@ const Skiper90 = () => {
         "React",
         "Tailwind CSS",
         "Razorpay",
-        "Nodemailer",
+        "AWS Mail",
         "Next.js",
         "Node.js",
         "Express.js",
@@ -43,8 +43,8 @@ const Skiper90 = () => {
     },
     {
       id: 2,
-      title: "VideoCh.com",
-      img: "#",
+      title: "VideoCh",
+      img: "./logoh",
       description:
         "Real-time video calling platform with peer-to-peer connection and meeting summary. Implemented authentication using JWT. Developed video call UI and real-time communication features.Backend APIs using Node.js & Express with MongoDB.",
       tags: [
@@ -60,8 +60,8 @@ const Skiper90 = () => {
         "Skiper UI",
         "axios",
       ],
-      website: "https://example.com",
-      source: "https://github.com",
+      website: "https://video-chat-frnt09.vercel.app/",
+      source: "https://github.com/suru3209/videoChatFrnt09.git",
       category: "Full Stack",
     },
     {
@@ -152,7 +152,7 @@ const Skiper90 = () => {
             <GradiantCardBody>
               <div className="flex flex-col h-full w-full bg-white/80 dark:bg-gray-900/70 backdrop-blur-md rounded-xl p-5 shadow-sm hover:shadow-md transition-all">
                 {/* Image / Icon */}
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-orange-400 via-green-400 to-blue-500 mb-4 flex items-center justify-center overflow-hidden">
+                <div className="w-14 h-14 rounded-full bg-gray-700 mb-4 flex items-center justify-center overflow-hidden">
                   {project.img ? (
                     <img
                       src={project.img}

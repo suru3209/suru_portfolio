@@ -117,7 +117,7 @@ export { Navbar_001, Skiper13, GlobalNavbar };
 
 const list = [
   { name: "Home", href: "/" },
-  { name: "Blogs", href: "/blogs" },
+  { name: "Blogs", href: "#" },
   { name: "Projects", href: "/project" },
   { name: "Skills", href: "#skills" },
   { name: "About", href: "/about" },
@@ -302,6 +302,9 @@ const skills = [
   "Node.js",
   "Redux",
   "MySQL",
+  "Git & Github",
+  "postgre",
+  "CI/CD",
 ];
 
 const Main = () => {
@@ -421,15 +424,36 @@ const Main = () => {
             <GithubStats />
           </div>
           {/* this is for experince*/}
-          <div className="mx-auto max-w-lg space-y-5 mb-50 text-center">
+          <div className="mx-auto max-w-lg space-y-5 mb-20 text-center">
             <h2
-              className={`text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100 ${myFont5.className}`}
+              className={`text-3xl md:text-4xl font-bold mb-6 text-gray-900 100dark:text-gray- ${myFont5.className}`}
             >
               Experince
             </h2>
-            <p className="text-xl md:text-2xl font-bold mb-6 text-gray-400 dark:text-gray-100">
-              Looking for Internship.....
-            </p>
+            <div className="w-full max-w-xl rounded-xl border lg:px-8 py-10 shadow-sm">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                Full Stack Developer (MERN)
+              </h3>
+
+              <p className="text-sm text-gray-600 dark:text-gray-100">
+                Info Bharat Inters · Internship
+              </p>
+
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-100">
+                Dec 2025 – Present
+              </p>
+
+              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-gray-700 dark:text-gray-100">
+                <li>
+                  Worked on frontend & backend APIs using React.js, HTML, CSS
+                  Node.js, Express, and MongoDB
+                </li>
+                <li>
+                  Implemented authentication, database models, and REST APIs
+                </li>
+                <li>Collaborated with frontend team to integrate APIs</li>
+              </ul>
+            </div>
           </div>
 
           {/* this is for skills what we have */}
@@ -517,7 +541,7 @@ const Main = () => {
                 <a
                   href="https://x.com/Surya_singh3209"
                   target="_blank"
-                  className="hover:text-gray-200 transition text-gray-800"
+                  className="hover:text-indigo-600 transition text-gray-800"
                 >
                   <FaXTwitter className="w-6 h-6 " />
                 </a>

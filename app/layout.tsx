@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { GlobalNavbar } from "@/components/ui/skiper-ui/skiper13";
 import { myFont, myFont1, myFont2, myFont3, myFont4, myFont5, myFont6, myFont7 } from "./fonts";
+import PageFooter from "@/components/FooterPage";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,6 +51,7 @@ export default function RootLayout({
         />
         <GlobalNavbar />
         {children}
+        <PageFooter/>
       </body>
     </html>
   );
